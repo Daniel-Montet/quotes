@@ -1,3 +1,16 @@
-<p>
-  user works!
-</p>
+<div>
+  <app-quote (newquote)="assign($event)"></app-quote>
+
+  <div *ngFor="let quote of quoteCard; let i = 'index'">
+      <li *ngFor="let q of quote">{{q._editorname}}</li>
+
+  <button (click)="upvote(quote)" type="button">upvote</button>
+  <button (click)="downvote(quote)" type="button">downvvote</button>
+  
+  
+</div>
+
+</div>
+
+
+
