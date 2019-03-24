@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  buttonclick:boolean;
+
+  toDelete:boolean=true;
  // user= new User('James');
   quoteCard=[];
   card=["red","blue","green"]
@@ -27,6 +28,15 @@ downvote(quote:Quote){
   quote._downvote+=1
 }
 
+goalDelete(quote,index){
+  if (quote){
+      let toDelete=confirm(`Are you sure you want to delete ${this.quoteCard[index].name}`)
+      
+      if(toDelete){
+          this.quoteCard.splice(index,1)
+      }
+  }
+}
   constructor() { }
 
   ngOnInit() {

@@ -1,36 +1,36 @@
 <div id="page"class="container-fluid">
-  <div id=""class="container-fluid">
-    <app-quote (newquote)="assign($event)"></app-quote>
-  </div>
 
-  <div id="page2" class="container-fluid">
+  <div id="page2" class="container">
 
     <div class="row">
-        <div id="qu" class="card col-sm-4" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
-            <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" class="card-img-top"
+        <div  class="card bg-dark text-white col-sm-3" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
+            <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" class="card-img"
               alt="...">
-              <li>{{quote._editorname}}</li>
             <div class="card-body">
+              <div>
+                  <p class="blockquote mb-0">{{quote._quote}}</p>
+                  <p class="blockquote-footer">{{quote._editorname}}</p>
+              </div>
               
             </div>
-            <div class="container">
-              <div class="row">
-                <i class="fa fa-comment col-sm-1"></i>
-                <div class="col-sm-7"></div>
-                <i id="upvote" class="fa fa-thumbs-up col-sm-1" (click)="upvote(quote)"></i>
-                <label for="upvote" class="col-sm-.8">{{quote._upvote}}</label>
-                <i id="downvote" class="fa fa-thumbs-down col-sm-1" (click)="downvote(quote)"></i>
-                <label for="downvote" class="col-sm-.8">{{quote._downvote}}</label>
-                <i class="fa fa-trash col-sm-1" (click) = 'goalDelete(true)'></i>
-              </div>
-                
+            <div class="card-footer">
+                <i class="fa fa-comment"></i>
+                <i id="upvote" class="fa fa-thumbs-up" (click)="upvote(quote)"></i>
+                <label for="upvote">{{quote._upvote}}</label>
+                <i id="downvote" class="fa fa-thumbs-down" (click)="downvote(quote)"></i>
+                <label for="downvote">{{quote._downvote}}</label>
+                <i class="fa fa-trash" (click) = 'goalDelete(quote,i)'></i>
             </div>
+            
             
           </div>
     </div>
    
 
   </div>
+  <div id=""class="container">
+      <app-quote (newquote)="assign($event)"></app-quote>
+    </div>
 
 
 
