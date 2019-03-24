@@ -1,19 +1,31 @@
-<div class="container-fluid">
-  <div class="container">
+<div id="page"class="container-fluid">
+  <div id=""class="container-fluid">
     <app-quote (newquote)="assign($event)"></app-quote>
   </div>
 
-  <div class="container">
+  <div id="page2" class="container-fluid">
 
     <div class="row">
-        <div class="card col-sm-6" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="card-img-top"
+        <div id="qu" class="card col-sm-4" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
+            <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" class="card-img-top"
               alt="...">
+              <li>{{quote._editorname}}</li>
             <div class="card-body">
-              <li *ngFor="let q of quote">{{q._editorname}}</li>
+              
             </div>
-            <button (click)="upvote(quote)" type="button">upvote</button>
-            <button (click)="downvote(quote)" type="button">downvvote</button>
+            <div class="container">
+              <div class="row">
+                <i class="fa fa-comment col-sm-1"></i>
+                <div class="col-sm-7"></div>
+                <i id="upvote" class="fa fa-thumbs-up col-sm-1" (click)="upvote(quote)"></i>
+                <label for="upvote" class="col-sm-.8">{{quote._upvote}}</label>
+                <i id="downvote" class="fa fa-thumbs-down col-sm-1" (click)="downvote(quote)"></i>
+                <label for="downvote" class="col-sm-.8">{{quote._downvote}}</label>
+                <i class="fa fa-trash col-sm-1" (click) = 'goalDelete(true)'></i>
+              </div>
+                
+            </div>
+            
           </div>
     </div>
    
@@ -23,5 +35,4 @@
 
 
 </div>
-
 

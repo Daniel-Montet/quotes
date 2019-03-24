@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +24,8 @@ import { MatButtonModule, MatSidenavModule,MatCardModule } from '@angular/materi
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
