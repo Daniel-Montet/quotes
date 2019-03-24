@@ -1,3 +1,24 @@
-<p>
-  quote works!
-</p>
+<div>
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+    <div class="form-group">
+      <label for="username">Name</label>
+      <input id="username" type="text" name="username" [(ngModel)]="quote._editorname">
+    </div>
+
+    <div class="form-group">
+
+      <label for="quote">Quote</label>
+      <textarea id="quote" name="quote" id="quote" cols="30" rows="10" [(ngModel)]="quote._quote"></textarea>
+
+    </div>
+
+    <div class="form-group">
+      <label for="author">Authored by</label>
+      <input id="author" type="text" name="author" [(ngModel)]="quote._authorname">
+    </div>
+    <button type="submit">submit</button>
+
+  </form>
+  
+  <hr>
+</div>

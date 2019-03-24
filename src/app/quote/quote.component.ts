@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output,EventEmitter} from '@angular/core';
+import {Quote} from '../quote';
+//import {User} from '../user'
+
 
 @Component({
   selector: 'app-quote',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
 
-  constructor() { }
+//@Input("_username") username:string;
+  
+quote= new Quote('','','',0,0,0)
+
+@Output() newquote= new EventEmitter<Quote>();
+
+private submitQuote(){
+  this.newquote.emit(this.quote)
+}
+  constructor() {}
 
   ngOnInit() {
+    
   }
 
 }
