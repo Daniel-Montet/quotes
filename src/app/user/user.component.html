@@ -1,16 +1,27 @@
-<div>
-  <app-quote (newquote)="assign($event)"></app-quote>
+<div class="container-fluid">
+  <div class="container">
+    <app-quote (newquote)="assign($event)"></app-quote>
+  </div>
 
-  <div *ngFor="let quote of quoteCard; let i = 'index'">
-      <li *ngFor="let q of quote">{{q._editorname}}</li>
+  <div class="container">
 
-  <button (click)="upvote(quote)" type="button">upvote</button>
-  <button (click)="downvote(quote)" type="button">downvvote</button>
-  
-  
+    <div class="row">
+        <div class="card col-sm-6" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
+            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="card-img-top"
+              alt="...">
+            <div class="card-body">
+              <li *ngFor="let q of quote">{{q._editorname}}</li>
+            </div>
+            <button (click)="upvote(quote)" type="button">upvote</button>
+            <button (click)="downvote(quote)" type="button">downvvote</button>
+          </div>
+    </div>
+   
+
+  </div>
+
+
+
 </div>
-
-</div>
-
 
 
