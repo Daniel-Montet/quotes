@@ -18,6 +18,7 @@ quote= new Quote('','','',0,0,0,new Date())
 
 private submitQuote(){
   this.newquote.emit(this.quote)
+  this.quote=new Quote('','','',0,0,0,new Date())
 }
   constructor() {}
 

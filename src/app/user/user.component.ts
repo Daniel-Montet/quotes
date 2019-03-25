@@ -13,8 +13,13 @@ export class UserComponent implements OnInit {
 
   toDelete:boolean=true;
  // user= new User('James');
-  quoteCard=[];
- // card=["red","blue","green"]
+  quoteCard=[
+    new Quote("Eminem","The truth is you don't know what is going to happen tomorrow. Life is a crazy ride, and nothing is guaranteed.","brian",0,15,1,new Date()),
+    new Quote("Albert Einstein","Look deep into nature, and then you will understand everything better.","brian",0,10,0,new Date()),
+    new Quote("Albert Einstein","I have no special talent. I am only passionately curious.","brian",0,20,0,new Date()),
+
+  ];
+  
   
 assign(event:Quote){
   let usersarrLength= this.quoteCard.length

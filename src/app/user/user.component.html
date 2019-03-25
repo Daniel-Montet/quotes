@@ -1,84 +1,108 @@
-<div id="page"class="container-fluid">
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Quote</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-           
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Livelihood</a>
-                <a class="dropdown-item" href="#">Love</a>
-              </div>
-            </li>
-          </ul>
-        
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control-outline-light mr-sm-2 nav-item dropdown" type="search" placeholder="Quick Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-      
-      <div id=""class="container">
-          <app-quote (newquote)="assign($event)"></app-quote>
-      </div>
+<app-quote (newquote)="assign($event)"></app-quote>
+<div id="page" class="container-fluid">
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Quote</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Livelihood</a>
+            <a class="dropdown-item" href="#">Love</a>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control-outline-light mr-sm-2 nav-item dropdown" type="search" placeholder="Quick Search"
+          aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  
+  
   <div id="page2" class="container-fluid">
 
-    <div class="row">
-        <div  class="card bg-dark text-white col-sm-3" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
-            <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" class="card-img"
-              alt="...">
-            <div class="card-body">
-              <div>
-                  <p class="blockquote mb-0">{{quote._quote}}</p>
-                  <p class="blockquote-footer">{{quote._editorname}}</p>
-              </div>
-              
+    <div id="card-row" class="row">
+      <div id="card" class="card bg-dark text-white col-sm-3 w-50" *ngFor="let quote of quoteCard; let i = 'index'">
+        <img id="img" src="https://wallpapercave.com/wp/khHbdpz.jpg" class="card-img " alt="...">
+        <div id="img" class="card-img-overlay">
+          <div class="card-body">
+            <p class="blockquote mb-0">{{quote._quote}}</p>
+            <p class="blockquote-footer">{{quote._editorname}}</p>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="row">
+            <div id="comment" class="col-md-1">
+              <i class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Add Coment"></i>
             </div>
-            
-            <div class="card-footer">
-                <i id="comment" class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Add Coment"></i>
-                <i id="upvote" class="fa fa-thumbs-up" (click)="upvote(quote)" data-toggle="tooltip" data-placement="top" title="Like"></i>
-                <label for="upvote">{{quote._upvote}}</label>
-                <i id="downvote" class="fa fa-thumbs-down" (click)="downvote(quote)" data-toggle="tooltip" data-placement="top" title="Dislike"></i>
-                <label for="downvote">{{quote._downvote}}</label>
-                <i class="fa fa-trash" (click) = 'goalDelete(quote,i)' data-toggle="tooltip" data-placement="top" title="Delete"></i>
-                <hr>
-                <i id="fa-binoculars" class="fa fa-binoculars" alt="view details" data-toggle="collapse" data-placement="top" title="View Details" (click)='toogleDetails(i)'>
-        
+            <div id="upvote" class="col-md-2">
+              <i class="fa fa-thumbs-up" (click)="upvote(quote)" data-toggle="tooltip" data-placement="top"
+                title="Like"></i>
+              <label for="upvote">{{quote._upvote}}</label>
+            </div>
+            <div id="downvote" class="col-md-2">
+              <i class="fa fa-thumbs-down" (click)="downvote(quote)" data-toggle="tooltip" data-placement="top"
+                title="Dislike"></i>
+              <label for="downvote">{{quote._downvote}}</label>
+            </div>
+            <div id="trash" class="col-md-2">
+              <i class="fa fa-trash" (click)='goalDelete(quote,i)' data-toggle="tooltip" data-placement="top"
+                title="Delete"></i>
+
+            </div>
+          </div>
+
+
+
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <i id="fa-binoculars" class="fa fa-binoculars" alt="view details" data-toggle="collapse"
+                  data-placement="top" title="View Details" (click)='toogleDetails(i)'>
+
                 </i>
+              </div>
+              <div class="col-md-10">
                 <span *ngIf="quote.showDescription" id="quotedetail">
-                    <div  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                          
-                          <small>date of submission {{quote.completeDate|date}}</small>
-                          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="toast-body">
-                            <app-quote-details  [quote]='quote'></app-quote-details>
-                        </div>
-                      </div>
+
+
+                  <small>date of submission {{quote.completeDate|date}}</small>
+
+                  <app-quote-details [quote]='quote'></app-quote-details>
+
 
                 </span>
-                
+              </div>
             </div>
-            
-            
+
           </div>
+
+
+
+        </div>
+
+
+      </div>
+
     </div>
-   
+
 
   </div>
 
 </div>
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
