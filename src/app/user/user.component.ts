@@ -47,12 +47,6 @@ toogleDetails(index){
   this.quoteCard[index].showDescription = !this.quoteCard[index].showDescription;
 }
 
-highestvote(quotecard){
-  if(quotecard && Math.max(quotecard._upvote)){
-  this.highest= quotecard._editorid
-  } 
-
-}
   constructor() { }
 
   ngOnInit() {
