@@ -16,7 +16,7 @@ quote= new Quote('','','',0,0,0,new Date())
 
 @Output() newquote= new EventEmitter<Quote>();
 
-private submitQuote(){
+public submitQuote(){
   this.newquote.emit(this.quote)
   this.quote=new Quote('','','',0,0,0,new Date())
 }

@@ -1,5 +1,4 @@
 import { Quote } from '../quote';
-//import { User } from '../user';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -35,7 +34,7 @@ downvote(quote:Quote){
 
 goalDelete(quote,index){
   if (quote){
-      let toDelete=confirm(`Are you sure you want to delete ${this.quoteCard[index].name}`)
+      let toDelete=confirm(`Are you sure you want to delete ${this.quoteCard[index]._editorname}`)
       
       if(toDelete){
           this.quoteCard.splice(index,1)
