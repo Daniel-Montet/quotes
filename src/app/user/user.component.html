@@ -1,6 +1,34 @@
-<div id="page"class="container-fluid">
 
-  <div id="page2" class="container">
+
+<div id="page"class="container-fluid">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Quote</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Livelihood</a>
+                <a class="dropdown-item" href="#">Love</a>
+              </div>
+            </li>
+          
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control-outline-light mr-sm-2 nav-item dropdown" type="search" placeholder="Quick Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+  <div id="page2" class="container-fluid">
 
     <div class="row">
         <div  class="card bg-dark text-white col-sm-3" *ngFor="let quote of quoteCard; let i = 'index'" style="width: 18rem;">
@@ -21,8 +49,7 @@
                 <label for="downvote">{{quote._downvote}}</label>
                 <i class="fa fa-trash" (click) = 'goalDelete(quote,i)'></i>
             </div>
-            
-            
+            <div></div>
           </div>
     </div>
    
