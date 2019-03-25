@@ -44,7 +44,7 @@
             </div>
             
             <div class="card-footer">
-                <i class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Add Coment"></i>
+                <i id="comment" class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Add Coment"></i>
                 <i id="upvote" class="fa fa-thumbs-up" (click)="upvote(quote)" data-toggle="tooltip" data-placement="top" title="Like"></i>
                 <label for="upvote">{{quote._upvote}}</label>
                 <i id="downvote" class="fa fa-thumbs-down" (click)="downvote(quote)" data-toggle="tooltip" data-placement="top" title="Dislike"></i>
@@ -58,7 +58,7 @@
                     <div  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
                           
-                          <small>11 mins ago</small>
+                          <small>date of submission {{quote.completeDate|date}}</small>
                           <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>

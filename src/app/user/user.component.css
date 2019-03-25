@@ -1,5 +1,13 @@
 #page {
   height: 1000px;
 }
-
+#comment{
+  float:left;
+}
+#upvote{
+  float: right;
+}
+#downvote{
+  float:right;
+}
   
