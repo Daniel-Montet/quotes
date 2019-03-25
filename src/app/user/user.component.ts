@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   toDelete:boolean=true;
  // user= new User('James');
   quoteCard=[];
-  card=["red","blue","green"]
+ // card=["red","blue","green"]
   
 assign(event:Quote){
   let usersarrLength= this.quoteCard.length
@@ -36,6 +36,10 @@ goalDelete(quote,index){
           this.quoteCard.splice(index,1)
       }
   }
+}
+
+toogleDetails(index){
+  this.quoteCard[index].showDescription = !this.quoteCard[index].showDescription;
 }
   constructor() { }
 

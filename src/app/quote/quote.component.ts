@@ -12,7 +12,7 @@ export class QuoteComponent implements OnInit {
 
 //@Input("_username") username:string;
   
-quote= new Quote('','','',0,0,0)
+quote= new Quote('','','',0,0,0,new Date())
 
 @Output() newquote= new EventEmitter<Quote>();
 
