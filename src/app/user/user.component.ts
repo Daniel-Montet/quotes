@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
 
   ];
   
-  
+  highest:any;
 assign(event:Quote){
   let usersarrLength= this.quoteCard.length
   event._editorid=usersarrLength + 1;
@@ -45,6 +45,13 @@ goalDelete(quote,index){
 
 toogleDetails(index){
   this.quoteCard[index].showDescription = !this.quoteCard[index].showDescription;
+}
+
+highestvote(quotecard){
+  if(quotecard && Math.max(quotecard._upvote)){
+  this.highest= quotecard._editorid
+  } 
+
 }
   constructor() { }
 

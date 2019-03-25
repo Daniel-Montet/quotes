@@ -104,5 +104,11 @@
 
 
   </div>
+  <div *ngFor="let quote of quoteCard; let i='index'">
+      <button (click)=highestvote(quoteCard[i]._upvote)>{{highest}} value</button>
+    
+    </div>
 
 </div>
+
+
